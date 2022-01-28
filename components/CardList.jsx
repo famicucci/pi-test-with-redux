@@ -15,7 +15,6 @@ const CardList = () => {
 
 	// use useDispatch
 	const dispatch = useDispatch();
-
 	const getPeople = () => dispatch(getPeopleAction());
 
 	useEffect(() => {

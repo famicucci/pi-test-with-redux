@@ -1,4 +1,4 @@
-import { GET_PEOPLE, REMOVE_PERSON, HIDE_LOADING, ADD_MSG } from '../../types';
+import { GET_PEOPLE, REMOVE_PERSON, HIDE_LOADING, ADD_MSG } from '../types';
 
 const initialState = {
 	people: [],

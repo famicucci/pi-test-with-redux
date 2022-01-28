@@ -8,7 +8,6 @@ const Card = (props) => {
 	const [effect, setEffect] = useState(false);
 
 	const dispatch = useDispatch();
-
 	const removePerson = (name) => dispatch(removePersonAction(name));
 
 	const handleClick = () => {

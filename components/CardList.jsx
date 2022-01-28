@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import PeopleContext from '../context/people/PeopleContext';
 import Card from './Card';
 import Pulse from './Pulse';
 import { SearchContext } from '../context/SearchContext';
@@ -8,11 +7,11 @@ import { getPeopleAction } from '../src/actions/peopleActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const CardList = () => {
-	const { msg } = useContext(PeopleContext);
 	const { search, filterByName } = useContext(SearchContext);
 
 	const people = useSelector((state) => state.people.people);
 	const loading = useSelector((state) => state.people.loading);
+	const msg = useSelector((state) => state.people.msg);
 
 	// use useDispatch
 	const dispatch = useDispatch();

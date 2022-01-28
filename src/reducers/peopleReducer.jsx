@@ -18,6 +18,11 @@ export default function (state = initialState, action) {
 				...state,
 				loading: false,
 			};
+		case ADD_MSG:
+			return {
+				...state,
+				msg: action.payload,
+			};
 		default:
 			return state;
 	}

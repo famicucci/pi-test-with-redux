@@ -10,8 +10,8 @@ export function getPeopleAction() {
 			dispatch(getPeople(r.data.results));
 			dispatch(hideLoading());
 		} catch (error) {
-			console.log(error);
-			// dispatch(agregarProductoError(true));
+			dispatch(addMsg('There was an error'));
+			dispatch(hideLoading());
 		}
 	};
 }
@@ -23,4 +23,9 @@ const getPeople = (people) => ({
 
 const hideLoading = () => ({
 	type: HIDE_LOADING,
+});
+
+const addMsg = (msg) => ({
+	type: ADD_MSG,
+	payload: msg,
 });

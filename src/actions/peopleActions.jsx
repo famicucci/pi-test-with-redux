@@ -16,9 +16,21 @@ export function getPeopleAction() {
 	};
 }
 
+// remove person
+export function removePersonAction(name) {
+	return async (dispatch) => {
+		dispatch(removePerson(name));
+	};
+}
+
 const getPeople = (people) => ({
 	type: GET_PEOPLE,
 	payload: people,
+});
+
+const removePerson = (name) => ({
+	type: REMOVE_PERSON,
+	payload: name,
 });
 
 const hideLoading = () => ({

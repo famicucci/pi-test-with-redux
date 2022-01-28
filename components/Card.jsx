@@ -1,12 +1,15 @@
-import React, { useContext, useState } from 'react';
-import PeopleContext from '../context/people/PeopleContext';
+import React, { useState } from 'react';
+import { removePersonAction } from '../src/actions/peopleActions';
+import { useDispatch } from 'react-redux';
 
 const Card = (props) => {
 	const { name, height, gender } = props;
 
 	const [effect, setEffect] = useState(false);
 
-	const { removePerson } = useContext(PeopleContext);
+	const dispatch = useDispatch();
+
+	const removePerson = (name) => dispatch(removePersonAction(name));
 
 	const handleClick = () => {
 		setEffect(true);

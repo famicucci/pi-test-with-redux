@@ -13,6 +13,11 @@ export default function (state = initialState, action) {
 				...state,
 				people: action.payload,
 			};
+		case REMOVE_PERSON:
+			return {
+				...state,
+				people: state.people.filter((person) => person.name !== action.payload),
+			};
 		case HIDE_LOADING:
 			return {
 				...state,
